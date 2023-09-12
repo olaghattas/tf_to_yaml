@@ -18,7 +18,7 @@ class GetYAML(Node):
         self.tf_buffer = Buffer()
         self.tf_listener = TransformListener(self.tf_buffer, self, spin_thread=True)
 
-        self.used_apriltags = [0, 1, 2, 3, 4, 5, 6, 7, 8]  # add the apriltag ids that you used
+        self.used_apriltags = [0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 16,18]  # add the apriltag ids that you used
         self.all_transforms_received = False
         self.transformation_ids_added = []
         self.transformations = []
