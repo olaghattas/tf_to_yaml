@@ -1,4 +1,6 @@
 from setuptools import setup
+import glob as glob
+import os
 
 package_name = 'tf_to_yaml'
 
@@ -10,6 +12,10 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        (os.path.join('share', package_name, 'launch'), [
+            'launch/launch.launch.py'
+        ]),
+
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -20,7 +26,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'get_yaml = tf_to_yaml.tf_to_yaml:main',
+            'get_yaml_aptags = tf_to_yaml.tf_to_yaml_aptag:main',
+            'get_yaml_rooms = tf_to_yaml.tf_to_yaml_rooms:main',
         ],
     },
 )
